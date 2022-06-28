@@ -1,0 +1,53 @@
+From b25b27d3d27e5b782679af4002565015c72aacc4 Mon Sep 17 00:00:00 2001
+From: Hansol Choe <hschoe@suresofttech.com>
+Date: Tue, 28 Jun 2022 07:03:07 +0000
+Subject: [PATCH] buggy
+
+---
+ src/wget.c | 16 ++--------------
+ 1 file changed, 2 insertions(+), 14 deletions(-)
+
+diff --git a/src/wget.c b/src/wget.c
+index cc760096..6b1f460c 100644
+--- a/src/wget.c
++++ b/src/wget.c
+@@ -2220,12 +2220,7 @@ static void process_response(wget_http_response *resp)
+ 			const char *local_filename;
+ 
+ 			if (config.content_disposition && resp->content_filename) {
+-				wget_iri iri = {
+-					.scheme = job->iri->scheme,
+-					.host = job->iri->host,
+-					.path = resp->content_filename
+-				};
+-				local_filename = get_local_filename(&iri);
++				local_filename = resp->content_filename;
+ 			} else
+ 				local_filename = job->blacklist_entry->local_filename;
+ 
+@@ -3517,12 +3512,7 @@ static int get_header(wget_http_response *resp, void *context)
+ 		}
+ 	}
+ 	else if (config.content_disposition && resp->content_filename) {
+-		wget_iri iri = {
+-			.scheme = ctx->job->iri->scheme,
+-			.host = ctx->job->iri->host,
+-			.path = resp->content_filename
+-		};
+-		name = dest = name_allocated = get_local_filename(&iri);
++		name = dest = resp->content_filename;		
+ 	} else {
+ 		name = dest = config.output_document ? config.output_document : ctx->job->blacklist_entry->local_filename;
+ 	}
+@@ -3580,8 +3570,6 @@ out:
+ 		}
+ 	}
+ 
+-	xfree(name_allocated);
+-
+ 	return ret;
+ }
+ 
+-- 
+2.25.1
+

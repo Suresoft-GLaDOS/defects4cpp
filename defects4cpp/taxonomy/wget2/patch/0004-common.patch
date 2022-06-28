@@ -1,0 +1,35 @@
+From 53843764cd4442018ae77cccffd27d86b5c1dccd Mon Sep 17 00:00:00 2001
+From: Hansol Choe <hschoe@suresofttech.com>
+Date: Tue, 28 Jun 2022 06:46:43 +0000
+Subject: [PATCH] common
+
+---
+ tests/Makefile.am      | 3 +++
+ unit-tests/Makefile.am | 3 +++
+ 2 files changed, 6 insertions(+)
+
+diff --git a/tests/Makefile.am b/tests/Makefile.am
+index 72f297de..f8552618 100644
+--- a/tests/Makefile.am
++++ b/tests/Makefile.am
+@@ -110,3 +110,6 @@ libplugindb_la_SOURCES = test-plugin-dummy.c plugin_tests.h
+ libplugindb_la_CPPFLAGS = $(AM_CPPFLAGS) -DTEST_SELECT_DATABASE
+ libplugindb_la_LDFLAGS = $(dummy_ldflags)
+ libplugindb_la_LIBADD = ../libwget/libwget.la $(MYLIBS) ../lib/libgnu.la
++print-%:
++	@echo "$($*)"
++
+diff --git a/unit-tests/Makefile.am b/unit-tests/Makefile.am
+index 4e4f0d85..f30a4adb 100644
+--- a/unit-tests/Makefile.am
++++ b/unit-tests/Makefile.am
+@@ -64,3 +64,6 @@ libbeta_la_SOURCES = test-dl-dummy.c
+ libbeta_la_CPPFLAGS = $(AM_CPPFLAGS) -DPARAM=beta
+ libbeta_la_LIBADD = $(LDADD)
+ libbeta_la_LDFLAGS = $(dummy_ldflags)
++print-%:
++	@echo "$($*)"
++
+-- 
+2.25.1
+
