@@ -210,45 +210,45 @@
   <section id="defects4cpp-user-guide">
 <h1 id="guide--page-root">Defects4cpp User Guide<a class="headerlink" href="#guide--page-root" title="Permalink to this headline">¶</a></h1>
 <p>A list of defect taxonomy can be displayed via the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">++</span> <span class="n">show</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">defects4cpp</span><span class="o">/</span><span class="n">d</span><span class="o">++.</span><span class="n">py</span> <span class="n">show</span>
 </pre></div>
 </div>
 <p>For the rest commands to work, you need to checkout one of projects in the list displayed in the previous step.
-For instance, if you want to checkout <cite>wireshark</cite> project:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ d++ checkout wireshark 1
+For instance, if you want to checkout <cite>wget2</cite> project:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 defects4cpp/d++.py checkout wget2 1
 </pre></div>
 </div>
-<p>Finally, to build and test <cite>wireshark</cite>, or any project you’ve just cloned, run the following sequence of commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ d++ build /path/to/wireshark/fixed#1
-$ d++ test /path/to/wireshark/fixed#1
+<p>Finally, to build and test <cite>wget2</cite>, or any project you’ve just cloned, run the following sequence of commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 defects4cpp/d++.py build /path/to/wget2/fixed#1
+$ python3 defects4cpp/d++.py test /path/to/wget2/fixed#1
 </pre></div>
 </div>
 <p>You can run some test cases separately like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ d++ test /path/to/wireshark/fixed#1 --case 1-4,7
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 defects4cpp/d++.py test /path/to/wget2/fixed#1 --case 1-4,7
 </pre></div>
 </div>
 <p>However, you are probably interested in a snapshot where a buggy commit is just made.
 The command is exactly the same except that <code class="docutils literal notranslate"><span class="pre">--buggy</span></code> flag is set.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ d++ checkout wireshark 1 --buggy
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 defects4cpp/d++.py checkout wget2 1 --buggy
 </pre></div>
 </div>
 <p>Set <code class="docutils literal notranslate"><span class="pre">--coverage</span></code> to generate <cite>.gcov</cite> data.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ d++ build /path/to/wireshark/buggy#1 --coverage
-$ d++ test /path/to/wireshark/buggy#1 --coverage
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 defects4cpp/d++.py build /path/to/wget2/buggy#1 --coverage
+$ python3 defects4cpp/d++.py test /path/to/wget2/buggy#1 --coverage
 </pre></div>
 </div>
 <p>You’ll see the artifact is generated in the current directory.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls
-/path/to/wireshark-fixed#1-1
-/path/to/wireshark-fixed#1-2
-/path/to/wireshark-fixed#1-3
+/path/to/wget2-fixed#1-1
+/path/to/wget2-fixed#1-2
+/path/to/wget2-fixed#1-3
 ...
 </pre></div>
 </div>
 <section id="d-checkout">
 <h2 id="d-checkout">d++ checkout<a class="headerlink" href="#d-checkout" title="Permalink to this headline">¶</a></h2>
 <p>Checkout defect taxonomy.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">usage: d++ checkout PROJECT INDEX [-b|--buggy] [-t|--target]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">usage: d++.py checkout PROJECT INDEX [-b|--buggy] [-t|--target]</span>
 </pre></div>
 </div>
 <dl class="std option">
@@ -285,7 +285,7 @@ $ d++ test /path/to/wireshark/buggy#1 --coverage
 <section id="d-build">
 <h2 id="d-build">d++ build<a class="headerlink" href="#d-build" title="Permalink to this headline">¶</a></h2>
 <p>Build project inside docker.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">usage: d++ build PATH [-j|--jobs=JOBS] [--coverage] [-v|--verbose] [-u|--uid[=UID_DPP_DOCKER_USER] [-e|--export[=EXPORT_PATH]]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">usage: d++.py build PATH [-j|--jobs=JOBS] [--coverage] [-v|--verbose] [-u|--uid[=UID_DPP_DOCKER_USER] [-e|--export[=EXPORT_PATH]]</span>
 </pre></div>
 </div>
 <dl class="std option">
@@ -342,7 +342,7 @@ $ d++ test /path/to/wireshark/buggy#1 --coverage
 <section id="d-test">
 <h2 id="d-test">d++ test<a class="headerlink" href="#d-test" title="Permalink to this headline">¶</a></h2>
 <p>Run testsuite inside docker. The project must have been built previously.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">usage: d++ test PATH [-j|--jobs=JOBS] [--coverage [--additional-gcov-options=ADDITIONAL_GCOV_OPTIONS]] [-v|--verbose] [-c|--case=expr] [--output-dir=directory]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">usage: d++.py test PATH [-j|--jobs=JOBS] [--coverage [--additional-gcov-options=ADDITIONAL_GCOV_OPTIONS]] [-v|--verbose] [-c|--case=expr] [--output-dir=directory]</span>
 </pre></div>
 </div>
 <dl class="std option">
