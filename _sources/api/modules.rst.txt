@@ -5,4 +5,5 @@ defects4cpp
    :maxdepth: 4
 
    defects4cpp
+   readme_generator
    setup

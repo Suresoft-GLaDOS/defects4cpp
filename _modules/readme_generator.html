@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -47,7 +46,7 @@
   
   
   
-    <title>setup module &#8212; defects4cpp 0.1 documentation</title>
+    <title>readme_generator &#8212; defects4cpp 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -56,7 +55,6 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="readme_generator module" href="readme_generator.html" />
   
    
 
@@ -75,7 +73,7 @@
   <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
   <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
   <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-  <a href="#api/setup" tabindex="1" class="md-skip"> Skip to content </a>
+  <a href="#_modules/readme_generator" tabindex="1" class="md-skip"> Skip to content </a>
   <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
@@ -93,7 +91,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">defects4cpp 0.1 documentation</span>
-          <span class="md-header-nav__topic"> setup module </span>
+          <span class="md-header-nav__topic"> readme_generator </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -150,7 +148,7 @@
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">defects4cpp 0.1 documentation</a></li>
-          <li class="md-tabs__item"><a href="modules.html" class="md-tabs__link">defects4cpp</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">Module code</a></li>
       </ul>
     </div>
   </nav>
@@ -183,7 +181,6 @@
 <nav class="md-nav md-nav--secondary">
   <ul class="md-nav__list" data-md-scrollfix="">
     
-<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/api/setup.rst.txt">Show Source</a> </li>
 
 <li id="searchbox" class="md-nav__item"></li>
 
@@ -196,10 +193,32 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  <section id="module-setup">
-<span id="setup-module"></span><h1 id="api-setup--page-root">setup module<a class="headerlink" href="#api-setup--page-root" title="Permalink to this headline">¶</a></h1>
-</section>
+  <h1 id="modules-readme-generator--page-root">Source code for readme_generator</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">defects4cpp.taxonomy</span> <span class="kn">import</span> <span class="n">Taxonomy</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
+<span class="n">TARGET_TEXT</span> <span class="o">=</span> <span class="s2">"@TABLE_OF_DEFECTS@"</span>
+
+<div class="viewcode-block" id="generate_readme"><a class="viewcode-back" href="../api/readme_generator.html#readme_generator.generate_readme">[docs]</a><span class="k">def</span> <span class="nf">generate_readme</span><span class="p">(</span><span class="n">taxonomy</span><span class="p">:</span> <span class="n">Taxonomy</span><span class="p">,</span> <span class="n">input_file_path</span> <span class="o">=</span> <span class="s2">"README.rst.template"</span><span class="p">,</span> <span class="n">output_file_path</span> <span class="o">=</span> <span class="s2">"README.rst"</span><span class="p">):</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="n">generate_table</span><span class="p">(</span><span class="n">taxonomy</span><span class="p">)</span>
+    <span class="k">assert</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">input_file_path</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">())</span>
+    <span class="k">assert</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">output_file_path</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">())</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">input_file_path</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_file</span><span class="p">:</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">input_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">TARGET_TEXT</span><span class="p">,</span> <span class="n">table</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file_path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_file</span><span class="p">:</span>
+        <span class="n">output_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="generate_table"><a class="viewcode-back" href="../api/readme_generator.html#readme_generator.generate_table">[docs]</a><span class="k">def</span> <span class="nf">generate_table</span><span class="p">(</span><span class="n">taxonomy</span><span class="p">):</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="s2">".. list-table:: </span><span class="se">\n</span><span class="s2">   :header-rows: 1</span><span class="se">\n\n</span><span class="s2">   * - Project</span><span class="se">\n</span><span class="s2">     - # of bugs</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="k">for</span> <span class="n">project_name</span> <span class="ow">in</span> <span class="n">taxonomy</span><span class="o">.</span><span class="n">_lazy_taxonomy</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">defects_num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">taxonomy</span><span class="p">[</span><span class="n">project_name</span><span class="p">]</span><span class="o">.</span><span class="n">defects</span><span class="p">)</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="n">table</span> <span class="o">+</span> <span class="s2">"   * - "</span> <span class="o">+</span> <span class="n">project_name</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">     - "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">defects_num</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="k">return</span> <span class="n">table</span></div>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">generate_readme</span><span class="p">(</span><span class="n">Taxonomy</span><span class="p">())</span>
+</pre></div>
 
           </article>
         </div>
@@ -209,19 +228,6 @@
   <footer class="md-footer">
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
-          
-            <a href="readme_generator.html" title="readme_generator module"
-               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
-               rel="prev">
-              <div class="md-flex__cell md-flex__cell--shrink">
-                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-              </div>
-              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-                <span class="md-flex__ellipsis">
-                  <span
-                      class="md-footer-nav__direction"> Previous </span> readme_generator module </span>
-              </div>
-            </a>
           
           
         </a>
