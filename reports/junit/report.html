@@ -243,7 +243,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 11-Jul-2022 at 07:11:47 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 11-Jul-2022 at 07:28:29 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -265,7 +265,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.8.13</td></tr></table>
     <h2>Summary</h2>
-    <p>52 tests ran in 444.96 seconds. </p>
+    <p>52 tests ran in 518.52 seconds. </p>
     <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">52 passed</span>, <input checked="true" class="filter" data-test-result="skipped" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">1 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
@@ -472,7 +472,7 @@ __main__.py: error: argument project: invalid choice: &#x27;foobar&#x27; (choose
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/processor/test_build_command.py::test_build_command_export_commands[yara]</td>
-          <td class="col-duration">58.22</td>
+          <td class="col-duration">43.69</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -500,6 +500,7 @@ INFO     processor.core.docker:(unknown file):0 container.__enter__ (yara-dpp)
                 - from drwxrwxrwx /home/runner/work/defects4cpp/defects4cpp/mydir/test_build_command_export_comm0/yara/fixed#1
                 - to /home/workspace
                 - mode rw
+WARNING  processor.build:(unknown file):0 build command exit with 2
 INFO     processor.core.docker:(unknown file):0 container.__exit__ (yara-dpp)
 INFO     processor.build:(unknown file):0 export to &#x27;/home/runner/work/defects4cpp/defects4cpp/mydir/test_build_command_export_comm0&#x27;
 INFO     processor.build:(unknown file):0 done<br/></div></td></tr></tbody>
@@ -507,7 +508,7 @@ INFO     processor.build:(unknown file):0 done<br/></div></td></tr></tbody>
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/processor/test_build_command.py::test_build_command_export_commands[cppcheck]</td>
-          <td class="col-duration">276.62</td>
+          <td class="col-duration">354.64</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -542,7 +543,7 @@ INFO     processor.build:(unknown file):0 done<br/></div></td></tr></tbody>
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/processor/test_build_command.py::test_build_command_rebuild_image</td>
-          <td class="col-duration">24.65</td>
+          <td class="col-duration">26.35</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -621,7 +622,7 @@ ERROR    processor.checkout:(unknown file):0 git-clone failed.
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/processor/test_checkout.py::test_git_worktree_error</td>
-          <td class="col-duration">0.37</td>
+          <td class="col-duration">0.80</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -642,7 +643,7 @@ ERROR    processor.checkout:(unknown file):0 git-worktree failed.
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/processor/test_checkout.py::test_git_checkout_error</td>
-          <td class="col-duration">0.22</td>
+          <td class="col-duration">0.80</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -662,7 +663,7 @@ ERROR    processor.checkout:(unknown file):0 git-checkout failed (not a git repo
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/processor/test_checkout.py::test_git_submodule_init_error</td>
-          <td class="col-duration">1.58</td>
+          <td class="col-duration">4.31</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -694,7 +695,7 @@ fatal: Fetched in submodule path &#x27;defects4cpp&#x27;, but it did not contain
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/processor/test_checkout.py::test_git_apply_patch_error_patch_could_not_be_applied</td>
-          <td class="col-duration">0.28</td>
+          <td class="col-duration">0.83</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -738,7 +739,7 @@ hint: Use &#x27;git am --show-current-patch=diff&#x27; to see the failed patch&#
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/processor/test_docker.py::test_docker_container</td>
-          <td class="col-duration">10.49</td>
+          <td class="col-duration">10.63</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -754,7 +755,7 @@ INFO     processor.core.docker:(unknown file):0 container.__exit__ (yara-dpp)<br
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/processor/test_docker.py::test_docker_mount_directory</td>
-          <td class="col-duration">20.92</td>
+          <td class="col-duration">21.19</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -895,7 +896,7 @@ INFO     processor.core.docker:(unknown file):0 container.__exit__ (yara-dpp)<br
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/processor/test_test_command_callback.py::test_run_command</td>
-          <td class="col-duration">26.28</td>
+          <td class="col-duration">26.60</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -906,25 +907,25 @@ Step 1/5 : FROM ubuntu:20.04
  ---&gt; 20fffa419e3a
 Step 2/5 : RUN useradd --uid 1001 --home-dir /home/workspace --shell /bin/bash defects4cpp
 
- ---&gt; Running in 24b484b721bb
-Removing intermediate container 24b484b721bb
- ---&gt; c76efe0234bb
+ ---&gt; Running in e7bfb45edad3
+Removing intermediate container e7bfb45edad3
+ ---&gt; 74d254bdc834
 Step 3/5 : USER defects4cpp
 
- ---&gt; Running in a9aff38eb7da
-Removing intermediate container a9aff38eb7da
- ---&gt; b150e1438583
+ ---&gt; Running in 7cc269a6d874
+Removing intermediate container 7cc269a6d874
+ ---&gt; 79ff0ae1eb2c
 Step 4/5 : ENV USER defects4cpp
 
- ---&gt; Running in 1679eeea4715
-Removing intermediate container 1679eeea4715
- ---&gt; 7b5b353ea926
+ ---&gt; Running in 4d064b9e780b
+Removing intermediate container 4d064b9e780b
+ ---&gt; 5d41a6739de8
 Step 5/5 : WORKDIR /home/workspace
 
- ---&gt; Running in 6c965e1b5e13
-Removing intermediate container 6c965e1b5e13
- ---&gt; 7fdfb1034cd6
-Successfully built 7fdfb1034cd6
+ ---&gt; Running in d08ac29d37e2
+Removing intermediate container d08ac29d37e2
+ ---&gt; de0da2fb7a22
+Successfully built de0da2fb7a22
 Successfully tagged hschoe/defects4cpp-ubuntu:test_run_command
   Closing container
   Starting container
@@ -944,7 +945,7 @@ INFO     processor.core.docker:(unknown file):0 container.__exit__ (test_run_com
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/processor/test_test_command_callback.py::test_run_command_as_script</td>
-          <td class="col-duration">21.22</td>
+          <td class="col-duration">22.29</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -956,20 +957,20 @@ Step 1/5 : FROM ubuntu:20.04
 Step 2/5 : RUN useradd --uid 1001 --home-dir /home/workspace --shell /bin/bash defects4cpp
 
  ---&gt; Using cache
- ---&gt; c76efe0234bb
+ ---&gt; 74d254bdc834
 Step 3/5 : USER defects4cpp
 
  ---&gt; Using cache
- ---&gt; b150e1438583
+ ---&gt; 79ff0ae1eb2c
 Step 4/5 : ENV USER defects4cpp
 
  ---&gt; Using cache
- ---&gt; 7b5b353ea926
+ ---&gt; 5d41a6739de8
 Step 5/5 : WORKDIR /home/workspace
 
  ---&gt; Using cache
- ---&gt; 7fdfb1034cd6
-Successfully built 7fdfb1034cd6
+ ---&gt; de0da2fb7a22
+Successfully built de0da2fb7a22
 Successfully tagged hschoe/defects4cpp-ubuntu:test_run_command_as_script
   Closing container
   Starting container
@@ -989,7 +990,7 @@ INFO     processor.core.docker:(unknown file):0 container.__exit__ (test_run_com
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/processor/test_vcs.py::test_checkout_fixed</td>
-          <td class="col-duration">1.97</td>
+          <td class="col-duration">3.00</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -1013,7 +1014,7 @@ INFO     processor.checkout:(unknown file):0 creating &#x27;.defects4cpp.json&#x
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/processor/test_vcs.py::test_checkout_buggy</td>
-          <td class="col-duration">1.78</td>
+          <td class="col-duration">3.00</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
