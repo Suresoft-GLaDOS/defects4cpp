@@ -199,15 +199,16 @@
 
 <span class="n">TARGET_TEXT</span> <span class="o">=</span> <span class="s2">"@TABLE_OF_DEFECTS@"</span>
 
-<div class="viewcode-block" id="generate_readme"><a class="viewcode-back" href="../api/readme_generator.html#readme_generator.generate_readme">[docs]</a><span class="k">def</span> <span class="nf">generate_readme</span><span class="p">(</span><span class="n">taxonomy</span><span class="p">:</span> <span class="n">Taxonomy</span><span class="p">,</span> <span class="n">input_file_path</span> <span class="o">=</span> <span class="s2">"README.rst.template"</span><span class="p">,</span> <span class="n">output_file_path</span> <span class="o">=</span> <span class="s2">"README.rst"</span><span class="p">):</span>
+
+<div class="viewcode-block" id="generate_readme"><a class="viewcode-back" href="../api/readme_generator.html#readme_generator.generate_readme">[docs]</a><span class="k">def</span> <span class="nf">generate_readme</span><span class="p">(</span><span class="n">taxonomy</span><span class="p">:</span> <span class="n">Taxonomy</span><span class="p">,</span> <span class="n">input_file_path</span><span class="o">=</span><span class="s2">"README.rst.template"</span><span class="p">,</span> <span class="n">output_file_path</span><span class="o">=</span><span class="s2">"README.rst"</span><span class="p">):</span>
     <span class="n">table</span> <span class="o">=</span> <span class="n">generate_table</span><span class="p">(</span><span class="n">taxonomy</span><span class="p">)</span>
     <span class="k">assert</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">input_file_path</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">())</span>
-    <span class="k">assert</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">output_file_path</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">())</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">input_file_path</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_file</span><span class="p">:</span>
         <span class="n">content</span> <span class="o">=</span> <span class="n">input_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
         <span class="n">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">TARGET_TEXT</span><span class="p">,</span> <span class="n">table</span><span class="p">)</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file_path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_file</span><span class="p">:</span>
         <span class="n">output_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span></div>
+
 
 <div class="viewcode-block" id="generate_table"><a class="viewcode-back" href="../api/readme_generator.html#readme_generator.generate_table">[docs]</a><span class="k">def</span> <span class="nf">generate_table</span><span class="p">(</span><span class="n">taxonomy</span><span class="p">):</span>
     <span class="n">table</span> <span class="o">=</span> <span class="s2">".. list-table:: </span><span class="se">\n</span><span class="s2">   :header-rows: 1</span><span class="se">\n\n</span><span class="s2">   * - Project</span><span class="se">\n</span><span class="s2">     - # of bugs</span><span class="se">\n</span><span class="s2">"</span>
@@ -215,6 +216,7 @@
         <span class="n">defects_num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">taxonomy</span><span class="p">[</span><span class="n">project_name</span><span class="p">]</span><span class="o">.</span><span class="n">defects</span><span class="p">)</span>
         <span class="n">table</span> <span class="o">=</span> <span class="n">table</span> <span class="o">+</span> <span class="s2">"   * - "</span> <span class="o">+</span> <span class="n">project_name</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">     - "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">defects_num</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
     <span class="k">return</span> <span class="n">table</span></div>
+
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">generate_readme</span><span class="p">(</span><span class="n">Taxonomy</span><span class="p">())</span>
