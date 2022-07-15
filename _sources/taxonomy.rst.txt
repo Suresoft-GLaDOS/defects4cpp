@@ -9,35 +9,37 @@ A List of Defect Taxonomy
 
    * - Project
      - # of bugs
-   * - libssh
-     - 1
    * - wget2
      - 3
-   * - cppcheck
-     - 30
-   * - xbps
-     - 5
-   * - libtiff
-     - 5
-   * - example
-     - 1
    * - libtiff_sanitizer
      - 4
-   * - proj
-     - 28
    * - libucl
      - 6
-   * - wireshark
-     - 6
-   * - openssl
-     - 28
-   * - libxml2
-     - 2
+   * - cppcheck
+     - 30
    * - yara
      - 5
-   * - coreutils
+   * - libxml2
      - 2
+   * - example
+     - 1
    * - libchewing
      - 8
    * - zsh
      - 5
+   * - jerryscript
+     - 1
+   * - xbps
+     - 5
+   * - coreutils
+     - 2
+   * - wireshark
+     - 6
+   * - proj
+     - 28
+   * - libssh
+     - 1
+   * - libtiff
+     - 5
+   * - openssl
+     - 28
