@@ -28,7 +28,7 @@ A List of Defect Taxonomy
    * - zsh
      - 5
    * - jerryscript
-     - 1
+     - 3
    * - xbps
      - 5
    * - coreutils
